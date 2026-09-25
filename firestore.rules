@@ -1,0 +1,87 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper functions ──────────────────────────────────────────────────────
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return request.auth.uid == uid;
+    }
+
+    // ── Patients ──────────────────────────────────────────────────────────────
+    match /patients/{patientId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Frontline workers ─────────────────────────────────────────────────────
+    match /frontline_workers/{workerId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(workerId);
+    }
+
+    // ── Doctors ───────────────────────────────────────────────────────────────
+    match /doctors/{doctorId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Admin only
+    }
+
+    // ── Facilities ────────────────────────────────────────────────────────────
+    match /facilities/{facilityId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Admin only
+    }
+
+    // ── Encounters ────────────────────────────────────────────────────────────
+    match /encounters/{encounterId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isAuthenticated();
+    }
+
+    // ── Triage results ────────────────────────────────────────────────────────
+    match /triage_results/{resultId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Referrals ─────────────────────────────────────────────────────────────
+    match /referrals/{referralId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Appointments ──────────────────────────────────────────────────────────
+    match /appointments/{appointmentId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Prescriptions ─────────────────────────────────────────────────────────
+    match /prescriptions/{prescriptionId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Tracker entries ───────────────────────────────────────────────────────
+    match /tracker_entries/{entryId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+
+    // ── Feedback ──────────────────────────────────────────────────────────────
+    match /feedback/{feedbackId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if false; // Only admins update status
+    }
+
+    // ── Emergency alerts ──────────────────────────────────────────────────────
+    match /emergency_alerts/{alertId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+  }
+}

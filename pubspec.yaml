@@ -1,0 +1,93 @@
+name: swasthya_connect
+description: SwasthyaConnect — Rural public-healthcare access app for patients and frontline health workers.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: 2.15.0
+  firebase_auth: 4.7.0
+  cloud_firestore: 4.8.0
+  firebase_storage: 11.2.0
+
+  # Local storage (offline-first)
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # State management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Connectivity & sync
+  connectivity_plus: ^5.0.2
+
+  # Camera & media
+  camera: ^0.10.5+9
+  image_picker: ^1.0.7
+  permission_handler: ^11.1.0
+
+  # Audio/voice - REMOVED (causing compatibility issues)
+  # record: ^5.1.2
+
+  # Location
+  geolocator: ^10.1.0
+
+  # Notifications - REMOVED (causing build issues)
+  # flutter_local_notifications: ^15.1.0
+
+  # Fonts
+  google_fonts: ^6.1.0
+
+  # UI helpers
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+  lottie: ^3.0.0
+  shimmer: ^3.0.0
+  table_calendar: ^3.0.9
+  fl_chart: ^0.66.2
+  pin_code_fields: ^8.0.1
+  url_launcher: ^6.2.3
+  share_plus: ^7.2.2
+
+  # Utilities
+  uuid: ^4.3.3
+  path_provider: ^2.1.2
+  shared_preferences: ^2.2.2
+  equatable: ^2.0.5
+  logger: ^2.0.2+1
+
+  # HTTP client for REST API integration
+  dio: ^5.4.0
+  
+  # Secure storage for tokens
+  flutter_secure_storage: ^9.0.0
+  
+  # Real-time communication
+  socket_io_client: ^2.0.3+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.8
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/

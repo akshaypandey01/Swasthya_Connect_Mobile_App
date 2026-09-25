@@ -1,0 +1,2 @@
+Place SVG icon assets here.
+The app uses Material Icons from the Flutter SDK — no custom icon files are required to run.

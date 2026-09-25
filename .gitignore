@@ -1,0 +1,47 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Android
+android/local.properties
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/gradle/
+*.jks
+*.keystore
+key.properties
+
+# iOS
+ios/.symlinks/
+ios/Pods/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/
+ios/Podfile.lock
+
+# Firebase — NEVER commit real config files
+google-services.json
+GoogleService-Info.plist
+lib/firebase_options.dart
+
+# Environment
+.env
+*.env
+
+# Generated Hive files should be committed so build_runner isn't required
+# But generated JSON/riverpod files can be excluded:
+# *.g.dart  <- Keep Hive adapters committed
+
+# macOS
+.DS_Store

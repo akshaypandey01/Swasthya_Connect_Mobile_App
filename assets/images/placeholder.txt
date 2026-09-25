@@ -1,0 +1,5 @@
+Place app images here (PNG/SVG).
+Required images:
+- logo.png          (512x512 app logo)
+- splash_bg.png     (optional splash background)
+- onboarding_1.png  (optional onboarding illustration)

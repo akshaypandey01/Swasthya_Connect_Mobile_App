@@ -1,0 +1,9 @@
+Place NotoSans font files here:
+  - NotoSans-Regular.ttf
+  - NotoSans-Bold.ttf
+  - NotoSans-SemiBold.ttf
+
+Download from: https://fonts.google.com/noto/specimen/Noto+Sans
+
+Alternatively, replace the font references in pubspec.yaml and app_theme.dart
+with the google_fonts package to load fonts at runtime without bundling them.

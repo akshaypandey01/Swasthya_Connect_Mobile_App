@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>CFBundleDisplayName</key>
+    <string>SwasthyaConnect</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>swasthya_connect</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>$(FLUTTER_BUILD_NAME)</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleVersion</key>
+    <string>$(FLUTTER_BUILD_NUMBER)</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
+    <!-- Camera -->
+    <key>NSCameraUsageDescription</key>
+    <string>SwasthyaConnect needs camera access to capture patient documents and wound photos.</string>
+    <!-- Microphone -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>SwasthyaConnect needs microphone access to record symptom voice notes.</string>
+    <!-- Location -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>SwasthyaConnect needs your location to share it during emergency SOS.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>SwasthyaConnect needs your location for emergency services.</string>
+    <!-- Photo library -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>SwasthyaConnect needs photo library access to upload health documents.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>SwasthyaConnect saves captured documents to your photo library.</string>
+    <!-- Background processing -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>background-fetch</string>
+        <string>remote-notification</string>
+    </array>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
+</dict>
+</plist>
