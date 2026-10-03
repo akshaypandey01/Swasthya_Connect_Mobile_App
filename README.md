@@ -213,9 +213,6 @@ lib/
 ## 📱 Supported Platforms
 
 - ✅ Android (API 21+)
-- 🚧 iOS (Planned)
-- 🚧 Web (Planned)
-
 ---
 
 ## 👥 Team HealthSync1
