@@ -45,3 +45,8 @@ lib/firebase_options.dart
 
 # macOS
 .DS_Store
+
+# Documentation and presentation files (keep locally, not in Git)
+docs/
+PPT/
+.kiro/
