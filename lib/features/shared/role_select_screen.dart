@@ -11,51 +11,78 @@ class RoleSelectScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            children: [
-              const SizedBox(height: 48),
-              const Icon(Icons.health_and_safety_rounded,
-                  size: 64, color: AppColors.primary),
-              const SizedBox(height: 16),
-              const Text('Who are you?',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.textPrimary)),
-              const SizedBox(height: 8),
-              const Text('आप कौन हैं?',
-                  style: TextStyle(
-                      fontSize: 16, color: AppColors.textSecondary)),
-              const SizedBox(height: 56),
-              _RoleTile(
-                icon: Icons.person_rounded,
-                title: 'Patient',
-                titleHi: 'मरीज़',
-                subtitle: 'Access your health records & services',
-                color: AppColors.primary,
-                bgColor: AppColors.primaryContainer,
-                onTap: () => context.go(AppRoutes.patientLogin),
-              ),
-              const SizedBox(height: 20),
-              _RoleTile(
-                icon: Icons.medical_services_rounded,
-                title: 'Frontline Health Worker',
-                titleHi: 'स्वास्थ्य कार्यकर्ता',
-                subtitle: 'Register patients, record vitals & visits',
-                color: AppColors.secondary,
-                bgColor: AppColors.secondaryContainer,
-                onTap: () => context.go(AppRoutes.workerLogin),
-              ),
-              const Spacer(),
-              TextButton.icon(
-                onPressed: () => context.go(AppRoutes.languageSelect),
-                icon: const Icon(Icons.language_rounded),
-                label: const Text('Change Language / भाषा बदलें'),
-              ),
-              const SizedBox(height: 24),
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
+              children: [
+                const SizedBox(height: 32),
+                Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryContainer,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Image.asset(
+                      'assets/images/swasthya_connect_logo.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text('SwasthyaConnect',
+                    style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.primary)),
+                const SizedBox(height: 4),
+                const Text('By HealthSync1 | Team ID: 165109',
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textSecondary)),
+                const SizedBox(height: 28),
+                const Text('Who are you?',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textPrimary)),
+                const SizedBox(height: 8),
+                const Text('आप कौन हैं?',
+                    style: TextStyle(
+                        fontSize: 16, color: AppColors.textSecondary)),
+                const SizedBox(height: 32),
+                _RoleTile(
+                  icon: Icons.person_rounded,
+                  title: 'Patient',
+                  titleHi: 'मरीज़',
+                  subtitle: 'Access your health records & services',
+                  color: AppColors.primary,
+                  bgColor: AppColors.primaryContainer,
+                  onTap: () => context.go(AppRoutes.patientLogin),
+                ),
+                const SizedBox(height: 20),
+                _RoleTile(
+                  icon: Icons.medical_services_rounded,
+                  title: 'Frontline Health Worker',
+                  titleHi: 'स्वास्थ्य कार्यकर्ता',
+                  subtitle: 'Register patients, record vitals & visits',
+                  color: AppColors.secondary,
+                  bgColor: AppColors.secondaryContainer,
+                  onTap: () => context.go(AppRoutes.workerLogin),
+                ),
+                const SizedBox(height: 24),
+                TextButton.icon(
+                  onPressed: () => context.go(AppRoutes.languageSelect),
+                  icon: const Icon(Icons.language_rounded),
+                  label: const Text('Change Language / भाषा बदलें'),
+                ),
+                const SizedBox(height: 24),
+              ],
+            ),
           ),
         ),
       ),

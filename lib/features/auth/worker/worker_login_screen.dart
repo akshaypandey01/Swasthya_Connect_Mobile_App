@@ -88,27 +88,82 @@ class _WorkerLoginScreenState extends ConsumerState<WorkerLoginScreen> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.medical_services_rounded,
-                          size: 40, color: AppColors.secondary),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Image.asset(
+                            'assets/images/swasthya_connect_logo.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                       const SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Frontline Worker Login',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.secondary)),
-                          Text('स्वास्थ्य कार्यकर्ता लॉगिन',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  color: AppColors.textSecondary)),
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('SwasthyaConnect',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.secondary)),
+                            Text('By HealthSync1 | Team ID: 165109',
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.textSecondary)),
+                            SizedBox(height: 4),
+                            Text('Frontline Worker Login',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.secondary)),
+                            Text('स्वास्थ्य कार्यकर्ता लॉगिन',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.textSecondary)),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 32),
+                const SizedBox(height: 24),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.green.shade200),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.info_outline, size: 18, color: Colors.green),
+                          SizedBox(width: 8),
+                          Text('Sample Test Credentials',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.green)),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'RCH ID: aakhabba\nOTP: 212121',
+                        style: TextStyle(fontSize: 12, color: Colors.black87, height: 1.4),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
                 ScTextField(
                   label: 'RCH Portal ID',
                   hint: 'Enter your RCH Worker ID',

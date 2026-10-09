@@ -91,7 +91,28 @@ class _WorkerOtpScreenState extends ConsumerState<WorkerOtpScreen> {
                   style: const TextStyle(
                       fontSize: 14, color: AppColors.textSecondary),
                   textAlign: TextAlign.center),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.green.shade200),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.info_outline, size: 18, color: Colors.green),
+                    SizedBox(width: 8),
+                    Text('Sample OTP: 212121',
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
               PinCodeTextField(
                 appContext: context,
                 length: 6,

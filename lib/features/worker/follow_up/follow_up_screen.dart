@@ -64,12 +64,15 @@ class FollowUpScreen extends StatelessWidget {
                 const Icon(Icons.person_rounded,
                     color: AppColors.primary, size: 18),
                 const SizedBox(width: 8),
-                Text(
-                  patientId.isNotEmpty
-                      ? 'Patient ID: $patientId'
-                      : 'Select a patient to log tracker entries',
-                  style: const TextStyle(
-                      fontSize: 13, color: AppColors.primary),
+                Expanded(
+                  child: Text(
+                    patientId.isNotEmpty
+                        ? 'Patient ID: $patientId'
+                        : 'Select a patient to log tracker entries',
+                    style: const TextStyle(
+                        fontSize: 13, color: AppColors.primary),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),

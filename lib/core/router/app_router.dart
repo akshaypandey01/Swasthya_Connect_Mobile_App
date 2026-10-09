@@ -15,6 +15,7 @@ import '../../features/patient/home/patient_home_screen.dart';
 import '../../features/patient/health_assessment/health_assessment_screen.dart';
 import '../../features/patient/health_locker/health_locker_screen.dart';
 import '../../features/patient/appointment/appointment_booking_screen.dart';
+import '../../features/patient/appointment/appointments_list_screen.dart';
 import '../../features/patient/queue/live_queue_screen.dart';
 import '../../features/patient/teleconsult/teleconsult_screen.dart';
 import '../../features/patient/menstrual_tracker/menstrual_tracker_screen.dart';
@@ -35,9 +36,12 @@ import '../../features/patient/followup/followup_details_screen.dart';
 import '../../features/patient/family/family_list_screen.dart';
 import '../../features/patient/family/add_family_member_screen.dart';
 import '../../features/patient/family/family_member_details_screen.dart';
+import '../../features/patient/medibot/medibot_screen.dart';
 
 // Worker screens
 import '../../features/worker/home/worker_home_screen.dart';
+import '../../features/worker/my_work/my_work_screen.dart';
+import '../../features/worker/patients/worker_patients_screen.dart';
 import '../../features/worker/find_patient/find_patient_screen.dart';
 import '../../features/worker/register_patient/register_patient_screen.dart';
 import '../../features/worker/patient_profile/worker_patient_profile_screen.dart';
@@ -103,10 +107,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.patientOtp,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return PatientOtpScreen(
-            abhaId: extra?['abhaId'] ?? '',
-            phone: extra?['phone'] ?? '',
+            abhaId: extra?['abhaId'] as String? ?? '',
+            phone: extra?['phone'] as String? ?? '',
           );
         },
       ),
@@ -119,10 +123,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.workerOtp,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return WorkerOtpScreen(
-            rchId: extra?['rchId'] ?? '',
-            phone: extra?['phone'] ?? '',
+            rchId: extra?['rchId'] as String? ?? '',
+            phone: extra?['phone'] as String? ?? '',
           );
         },
       ),
@@ -145,10 +149,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (_, __) => const AppointmentBookingScreen(),
       ),
       GoRoute(
+        path: AppRoutes.appointmentsList,
+        builder: (_, __) => const AppointmentsListScreen(),
+      ),
+      GoRoute(
         path: AppRoutes.liveQueue,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
-          return LiveQueueScreen(appointmentId: extra?['appointmentId'] ?? '');
+          final extra = state.extra as Map<String, dynamic>?;
+          return LiveQueueScreen(appointmentId: extra?['appointmentId'] as String? ?? '');
         },
       ),
       GoRoute(
@@ -236,11 +244,23 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           return FamilyMemberDetailsScreen(memberId: memberId);
         },
       ),
+      GoRoute(
+        path: AppRoutes.medibot,
+        builder: (_, __) => const MedibotScreen(),
+      ),
 
       // ── Worker app ────────────────────────────────────────────────────────
       GoRoute(
         path: AppRoutes.workerHome,
         builder: (_, __) => const WorkerHomeScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.myWork,
+        builder: (_, __) => const MyWorkScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.workerPatients,
+        builder: (_, __) => const WorkerPatientsScreen(),
       ),
       GoRoute(
         path: AppRoutes.findPatient,
@@ -253,30 +273,30 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.workerPatientProfile,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return WorkerPatientProfileScreen(
-              patientId: extra?['patientId'] ?? '');
+              patientId: extra?['patientId'] as String? ?? '');
         },
       ),
       GoRoute(
         path: AppRoutes.uploadRecords,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
-          return UploadRecordsScreen(patientId: extra?['patientId'] ?? '');
+          final extra = state.extra as Map<String, dynamic>?;
+          return UploadRecordsScreen(patientId: extra?['patientId'] as String? ?? '');
         },
       ),
       GoRoute(
         path: AppRoutes.vitalsEntry,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
-          return VitalsEntryScreen(patientId: extra?['patientId'] ?? '');
+          final extra = state.extra as Map<String, dynamic>?;
+          return VitalsEntryScreen(patientId: extra?['patientId'] as String? ?? '');
         },
       ),
       GoRoute(
         path: AppRoutes.symptomInput,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
-          return SymptomInputScreen(encounterId: extra?['encounterId'] ?? '');
+          final extra = state.extra as Map<String, dynamic>?;
+          return SymptomInputScreen(encounterId: extra?['encounterId'] as String? ?? '');
         },
       ),
       GoRoute(
@@ -294,24 +314,24 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.workerTeleconsult,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return WorkerTeleconsultScreen(
-              priority: extra?['priority'] ?? 'routine');
+              priority: extra?['priority'] as String? ?? 'routine');
         },
       ),
       GoRoute(
         path: AppRoutes.emergencyEscalation,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return EmergencyEscalationScreen(
-              patientId: extra?['patientId'] ?? '');
+              patientId: extra?['patientId'] as String? ?? '');
         },
       ),
       GoRoute(
         path: AppRoutes.followUpTrackers,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
-          return FollowUpScreen(patientId: extra?['patientId'] ?? '');
+          final extra = state.extra as Map<String, dynamic>?;
+          return FollowUpScreen(patientId: extra?['patientId'] as String? ?? '');
         },
       ),
       GoRoute(
@@ -335,9 +355,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.workerReferralDetails,
         builder: (context, state) {
-          final extra = state.extra as Map<String, String>?;
+          final extra = state.extra as Map<String, dynamic>?;
           return WorkerReferralDetailsScreen(
-            referralId: extra?['referralId'] ?? '',
+            referralId: extra?['referralId'] as String? ?? '',
           );
         },
       ),

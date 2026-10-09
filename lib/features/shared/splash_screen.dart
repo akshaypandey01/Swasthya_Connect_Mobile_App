@@ -64,17 +64,19 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                    Container(
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.15),
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(
-                      Icons.health_and_safety_rounded,
-                      size: 56,
-                      color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Image.asset(
+                        'assets/images/swasthya_connect_logo.png',
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -104,7 +106,17 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                       fontStyle: FontStyle.italic,
                     ),
                   ),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 24),
+                  Text(
+                    'By HealthSync1 | Team ID: 165109',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white.withOpacity(0.85),
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
                   SizedBox(
                     width: 32,
                     height: 32,

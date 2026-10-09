@@ -18,6 +18,7 @@ class AppRoutes {
   static const String healthAssessment = '/patient/health-assessment';
   static const String healthLocker = '/patient/health-locker';
   static const String appointmentBooking = '/patient/appointment';
+  static const String appointmentsList = '/patient/appointments';
   static const String liveQueue = '/patient/queue';
   static const String teleconsult = '/patient/teleconsult';
   static const String menstrualTracker = '/patient/menstrual';
@@ -39,9 +40,12 @@ class AppRoutes {
   static const String addFamilyMember = '/patient/family/add';
   static const String editFamilyMember = '/patient/family/edit';
   static const String familyMemberDetails = '/patient/family/details';
+  static const String medibot = '/patient/medibot';
 
   // Worker app
   static const String workerHome = '/worker/home';
+  static const String myWork = '/worker/my-work';
+  static const String workerPatients = '/worker/patients';
   static const String findPatient = '/worker/find-patient';
   static const String registerPatient = '/worker/register-patient';
   static const String workerPatientProfile = '/worker/patient-profile';

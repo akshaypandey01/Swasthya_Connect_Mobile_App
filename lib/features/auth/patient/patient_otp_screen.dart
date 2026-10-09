@@ -113,7 +113,28 @@ class _PatientOtpScreenState extends ConsumerState<PatientOtpScreen> {
                     fontSize: 14, color: AppColors.textSecondary),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.blue.shade200),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.info_outline, size: 18, color: Colors.blue),
+                    SizedBox(width: 8),
+                    Text('Sample OTP: 212121',
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.blue)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
               PinCodeTextField(
                 appContext: context,
                 length: 6,

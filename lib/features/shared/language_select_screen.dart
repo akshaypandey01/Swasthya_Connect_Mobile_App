@@ -36,15 +36,34 @@ class _LanguageSelectScreenState extends ConsumerState<LanguageSelectScreen> {
           child: Column(
             children: [
               const SizedBox(height: 60),
-              const Icon(Icons.health_and_safety_rounded,
-                  size: 72, color: AppColors.primary),
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryContainer,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Image.asset(
+                    'assets/images/swasthya_connect_logo.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
               const Text('SwasthyaConnect',
                   style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
                       color: AppColors.primary)),
-              const SizedBox(height: 8),
+              const SizedBox(height: 4),
+              const Text('By HealthSync1 | Team ID: 165109',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.textSecondary)),
+              const SizedBox(height: 12),
               const Text('Select Language / भाषा चुनें',
                   style: TextStyle(fontSize: 16, color: AppColors.textSecondary)),
               const SizedBox(height: 48),

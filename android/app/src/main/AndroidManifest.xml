@@ -34,7 +34,7 @@
     <application
         android:label="SwasthyaConnect"
         android:name="${applicationName}"
-        android:icon="@android:mipmap/sym_def_app_icon"
+        android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
 
         <activity

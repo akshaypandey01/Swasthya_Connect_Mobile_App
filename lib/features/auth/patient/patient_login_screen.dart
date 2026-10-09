@@ -78,27 +78,78 @@ class _PatientLoginScreenState extends ConsumerState<PatientLoginScreen> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.person_rounded,
-                          size: 40, color: AppColors.primary),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Image.asset(
+                            'assets/images/swasthya_connect_logo.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                       const SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Patient Login',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.primary)),
-                          Text('मरीज़ लॉगिन',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: AppColors.textSecondary)),
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('SwasthyaConnect',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.primary)),
+                            Text('By HealthSync1 | Team ID: 165109',
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.textSecondary)),
+                            SizedBox(height: 4),
+                            Text('Patient Login • मरीज़ लॉगिन',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.textSecondary)),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 36),
+                const SizedBox(height: 24),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.blue.shade200),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.info_outline, size: 18, color: Colors.blue),
+                          SizedBox(width: 8),
+                          Text('Sample Test Credentials',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.blue)),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'ABHA: 99999999999999\nMobile: 6307334374\nOTP: 212121',
+                        style: TextStyle(fontSize: 12, color: Colors.black87, height: 1.4),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
                 ScTextField(
                   label: 'ABHA ID / ABHA नंबर',
                   hint: '14-digit ABHA Number',

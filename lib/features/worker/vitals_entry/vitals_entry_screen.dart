@@ -152,9 +152,14 @@ class _VitalsEntryScreenState extends ConsumerState<VitalsEntryScreen> {
                         const Icon(Icons.person_rounded,
                             color: AppColors.primary, size: 20),
                         const SizedBox(width: 8),
-                        Text('Patient: ${widget.patientId}',
+                        Expanded(
+                          child: Text(
+                            'Patient: ${widget.patientId}',
                             style: const TextStyle(
-                                fontSize: 13, color: AppColors.primary)),
+                                fontSize: 13, color: AppColors.primary),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ],
                     ),
                   ),
